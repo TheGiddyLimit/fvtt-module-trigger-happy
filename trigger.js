@@ -126,7 +126,7 @@ class TriggerHappy {
      */
     _isTokenTrigger(token, trigger, type) {
         const isTrigger = ((trigger.trigger.entity === "Actor" && trigger.trigger.id === token.data.actorId) ||
-            (trigger.trigger.constructor.name === "Token" && (trigger.trigger.data.name === token.data.name || trigger.trigger.data.id === token.id)));
+            (trigger.trigger.constructor.name === "Token" && (trigger.trigger.data.name === token.data.name || trigger.trigger.data.name === token.id)));
         if (!isTrigger) return false;
         if (type === "click")
             return trigger.options.includes('click') || (!trigger.options.includes('move') && !token.data.hidden);
