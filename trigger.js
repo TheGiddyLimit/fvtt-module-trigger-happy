@@ -109,7 +109,7 @@ class TriggerHappy {
                     }
                     await ChatMessage.create(chatData);
                 } else if (effect.constructor.name === "Token") {
-                    const token = canvas.tokens.placeables.find(t => t.name === effect.name)
+                    const token = canvas.tokens.placeables.find(t => t.name === effect.name || t.id === effect.id)
                     if (token)
                         await token.control();
                 } else {
